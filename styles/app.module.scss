@@ -1,0 +1,16 @@
+.navigation {
+  background-color: var(--navigation);
+  backdrop-filter: blur(2px);
+  font-family: "FollowYouIntotheWorld" !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > div {
+    width: 100%;
+    max-width: 800px;
+  }
+}
