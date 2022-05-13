@@ -34,9 +34,9 @@
   --bg300: #1e1e1e;
 
   // Primary
-  --primary: #796aff;
-  --primary70: #796aff70;
-  --primary20: #796aff20;
+  --primary: #ff8f8f;
+  --primary70: #ff8f8f70;
+  --primary20: #ff8f8f20;
 
   // Secondary
   --secondary: #3121bd;
@@ -97,7 +97,7 @@
 .dark {
   //default root variables
   min-height: 100vh;
-  background: url("../public/pattern.svg");
+  background: url("../public/patternDark.svg");
   //background-color: var(--bg100);
   transition: var(--transition);
 }
@@ -112,7 +112,7 @@
   // Background
   --bg100: #fafafa;
   --bg200: white;
-  --bg300: #f7f7f7;
+  --bg300: #fffdfe;
 
   // --primary but 10% lighter
   --tagBg: #9384ff;
@@ -298,7 +298,8 @@ select {
 }
 
 h1 {
-  font-size: var(--fontXXL);
+  text-align: center;
+  font-size: clamp(var(--fontXXL), 5vw, 50px);
   color: var(--text100);
 }
 

@@ -1,0 +1,12 @@
+.paper {
+  transition: var(--transition);
+  background-color: var(--bg300);
+  padding: var(--paddingXL);
+  border: solid 5px var(--primary20);
+  border-radius: var(--borderRadius);
+  //margin: var(--marginXL);
+  color: var(--text200);
+  box-shadow: var(--dropShadow);
+  width: calc(100% - var(--paddingXL));
+  max-width: 800px;
+}

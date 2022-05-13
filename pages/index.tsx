@@ -1,38 +1,34 @@
-import type { NextPage } from "next";
-import { Button, Flex, Input, Text } from "@findnlink/neuro-ui";
-import { useState } from "react";
-import scss from "../styles/app.module.scss";
-
-const Home: NextPage = () => {
-  const [value, setValue] = useState("");
+import { createClient } from "next-sanity";
+export default function IndexPage({ pets }: any) {
   return (
-    <div className={scss.content}>
-      <Flex alignItems="center">
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Text scale="xl">Neuro-UI test with nextjs and typescript</Text>
-        <Button scale="l" primary>
-          Tutoreel heruterladen
-        </Button>
-      </Flex>
-    </div>
+    <>
+      <main>
+        <h2>Pets</h2>
+        {pets.length > 0 && (
+          <ul>
+            {pets.map((pet: any) => (
+              <li key={pet._id}>{pet?.name}</li>
+            ))}
+          </ul>
+        )}
+      </main>
+    </>
   );
-};
+}
 
-export default Home;
+const client = createClient({
+  projectId: "sgofye2i",
+  dataset: "production",
+  apiVersion: "2021-10-14",
+  useCdn: false,
+});
+
+export async function getStaticProps() {
+  const pets = await client.fetch(`*[_type == "pet"]`);
+
+  return {
+    props: {
+      pets,
+    },
+  };
+}

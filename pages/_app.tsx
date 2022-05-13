@@ -30,7 +30,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Flex margin="xl" flexDirection="row" alignItems="center">
+          <Flex
+            margin="xl"
+            flexDirection="row"
+            alignItems="center"
+            onClick={() => {
+              router.push("/");
+            }}
+          >
             <Image
               width={40}
               height={50}
