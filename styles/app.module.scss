@@ -2,6 +2,7 @@
   background-color: var(--navigation);
   backdrop-filter: blur(2px);
   font-family: "FollowYouIntotheWorld" !important;
+  z-index: 10;
 }
 
 .content {
@@ -10,4 +11,18 @@
   align-items: center;
   padding: var(--paddingXL);
   width: unset !important;
+
+  .imageWrapper {
+    position: relative;
+    .textOverlay {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .kontakt {
+    margin: 0px 0px 50px 0px;
+    text-align: center;
+    line-height: 1.6;
+  }
 }

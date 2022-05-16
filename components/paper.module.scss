@@ -1,12 +1,37 @@
 .paper {
   transition: var(--transition);
   background-color: var(--bg300);
-  padding: var(--paddingXL);
+  padding: 50px;
   border: solid 5px var(--primary20);
   border-radius: var(--borderRadius);
   //margin: var(--marginXL);
   color: var(--text200);
   box-shadow: var(--dropShadow);
-  width: calc(100% - var(--paddingXL));
+  width: calc(100% - 100px);
   max-width: 800px;
+
+  * {
+    font-family: Bahnschrift !important;
+  }
+
+  img {
+    z-index: 0 !important;
+  }
+
+  h1 {
+    font-family: "FollowYouIntotheWorld" !important;
+  }
+
+  .icon {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .paper {
+    padding: 20px;
+    width: calc(100% - 30px);
+  }
 }

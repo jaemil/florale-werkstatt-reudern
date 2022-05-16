@@ -7,8 +7,6 @@ import { createClient } from "next-sanity";
 import ReactMarkdown from "react-markdown";
 
 const Aktuelles: NextPage = ({ aktuelles }: any) => {
-  console.log("aktuelles", aktuelles);
-
   return (
     <div className={scss.content}>
       <Paper>
