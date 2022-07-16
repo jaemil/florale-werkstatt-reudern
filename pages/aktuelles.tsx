@@ -5,6 +5,7 @@ import scss from "../styles/app.module.scss";
 import Paper from "../components/paper";
 import { createClient } from "next-sanity";
 import ReactMarkdown from "react-markdown";
+import { client } from "../lib/sanityConfig";
 
 const Aktuelles: NextPage = ({ aktuelles }: any) => {
   return (
@@ -12,28 +13,18 @@ const Aktuelles: NextPage = ({ aktuelles }: any) => {
       <Paper>
         <h1>Aktuelles</h1>
 
-        {aktuelles.length > 0 && (
-          <ul>
-            {aktuelles.map((item: any) => (
-              <li key={item._id}>
-                <ReactMarkdown>{item?.bio}</ReactMarkdown>
-              </li>
-            ))}
-          </ul>
-        )}
+        {aktuelles.length > 0 &&
+          aktuelles.map((item: any) => (
+            <Text style={{ lineHeight: "1.7" }} align="center">
+              <ReactMarkdown>{item?.bio}</ReactMarkdown>
+            </Text>
+          ))}
       </Paper>
     </div>
   );
 };
 
 export default Aktuelles;
-
-const client = createClient({
-  projectId: "sgofye2i",
-  dataset: "production",
-  apiVersion: "2021-10-14",
-  useCdn: false,
-});
 
 export async function getStaticProps() {
   const aktuelles = await client.fetch(`*[_type == "aktuelles"]`);

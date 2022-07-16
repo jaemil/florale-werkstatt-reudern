@@ -87,23 +87,18 @@
   // Transition
   --transition: all 0.2s ease-in-out;
 
+  // Navbar
+  --navbarHeight: 80px;
+
+  // Mobile Menu Sidebar height
+  --mobileMenuButtonHeight: 50px;
+
   // Media Query
   --mobile: (max-width: 640px);
   --tablet: (max-width: 768px);
 
   --navigation: rgba(26, 26, 26, 0.5);
-}
 
-.dark {
-  //default root variables
-  min-height: 100vh;
-  background: url("../public/patternDark.svg");
-  //background-color: var(--bg100);
-  transition: var(--transition);
-}
-
-.light {
-  // Text
   --text100: #2a2a2a;
   --text200: #585757;
   --text300: #969696;
@@ -128,6 +123,21 @@
 
   --navigation: rgba(255, 255, 255, 0.5);
 
+  min-height: 100vh;
+  background: url("../public/pattern.svg");
+  //background-color: var(--bg100);
+  transition: var(--transition);
+}
+
+.dark {
+  //default root variables
+  min-height: 100vh;
+  background: url("../public/pattern.svg");
+  //background-color: var(--bg100);
+  transition: var(--transition);
+}
+
+.light {
   min-height: 100vh;
   background: url("../public/pattern.svg");
   //background-color: var(--bg100);
@@ -302,7 +312,7 @@ h1 {
   font-size: clamp(var(--fontXXL), 5vw, 50px);
   color: var(--text100);
   font-family: "FollowYouIntotheWorld" !important;
-  padding: 10px 5px 30px 5px;
+  padding: 0px 5px 30px 5px;
 }
 
 h2 {

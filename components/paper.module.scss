@@ -2,7 +2,8 @@
   transition: var(--transition);
   background-color: var(--bg300);
   padding: 50px;
-  border: solid 5px var(--primary20);
+
+  //border: solid 5px var(--primary20);
   border-radius: var(--borderRadius);
   //margin: var(--marginXL);
   color: var(--text200);
@@ -24,6 +25,7 @@
 
   .icon {
     padding: 80px 20px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
   }

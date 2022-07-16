@@ -7,6 +7,7 @@ import {
   FooterItem,
   Input,
   Layout,
+  Navigation,
   StoreProvider,
   Tab,
   Tabs,
@@ -18,11 +19,12 @@ import "@findnlink/neuro-ui/lib/style.css";
 import scss from "../styles/app.module.scss";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Logo from "../public/images/logo4.png";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   return (
-    <StoreProvider disableSplashScreen defaultTheme="dark">
+    <StoreProvider disableSplashScreen defaultTheme="light">
       <Layout type="default">
         <Flex
           className={scss.navigation}
@@ -34,25 +36,20 @@ function MyApp({ Component, pageProps }: AppProps) {
             margin="xl"
             flexDirection="row"
             alignItems="center"
+            pointer
             onClick={() => {
               router.push("/");
             }}
           >
-            <Image
-              width={40}
-              height={50}
-              src={
-                "https://upload.wikimedia.org/wikipedia/commons/e/e5/Solid_blue.png"
-              }
-            ></Image>
-            <div style={{ marginLeft: "10px" }}>
+            <Image width={40} height={50} src={Logo}></Image>
+            <div style={{ marginLeft: "10px", width: "100%" }}>
               Florale Werkstatt
               <br />
               Anne-Kathrin Faiss
             </div>
           </Flex>
-          <div>
-            <Tabs id="navigation" margin="0 m 0 0">
+          <Navigation type="top" _class={scss.navigation2}>
+            <Tabs id="navigation" margin="0 m 0 0" _class={scss.tabs}>
               <TabsHeader>
                 <Tab
                   onClick={() => {
@@ -102,25 +99,19 @@ function MyApp({ Component, pageProps }: AppProps) {
                 >
                   Kontakt
                 </Tab>
-                <Tab index={6}>
+                {/* <Tab index={6}>
                   <ThemeChanger />
-                </Tab>
+                </Tab> */}
               </TabsHeader>
             </Tabs>
-          </div>
+          </Navigation>
         </Flex>
         <Component {...pageProps} />
         <Footer>
           <FooterItem>
-            <Flex margin="xl" flexDirection="row" alignItems="center">
-              <Image
-                width={40}
-                height={50}
-                src={
-                  "https://upload.wikimedia.org/wikipedia/commons/e/e5/Solid_blue.png"
-                }
-              ></Image>
-              <div style={{ marginLeft: "10px" }}>
+            <Flex flexDirection="row" alignItems="center" _class={scss.flex}>
+              <Image width={60} height={80} src={Logo}></Image>
+              <div style={{ marginLeft: "20px", fontSize: "20px" }}>
                 Florale Werkstatt
                 <br />
                 Anne-Kathrin Faiss
@@ -128,7 +119,12 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Flex>
           </FooterItem>
           <FooterItem>
-            <Flex flexDirection="row" flexWrap="wrap">
+            <Flex
+              flexDirection="row"
+              flexWrap="wrap"
+              alignItems="center"
+              _class={scss.flex}
+            >
               <div>
                 E-Mail: anne-kathrin_faiss@web.de
                 <br /> Telefon: 07022 211117
@@ -138,7 +134,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 Kelterweg 20 <br />
                 72622 Reudern
               </div>
-              <iframe
+              {/* <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2637.2283700454764!2d9.384210915992071!3d48.62461182509219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47999546133ab62f%3A0x442f459126a63d04!2sFlorale%20Werkstatt%20Anne-Kathrin%20Faiss!5e0!3m2!1sde!2sde!4v1652357450232!5m2!1sde!2sde"
                 width="300"
                 height="300"
@@ -146,13 +142,20 @@ function MyApp({ Component, pageProps }: AppProps) {
                 //allowfullscreen=""
                 loading="lazy"
                 //referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+              ></iframe> */}
             </Flex>
           </FooterItem>
           <FooterItem>
-            Öffnungzeiten: <br />
-            Montag und Dienstag: 15:00 - 18:30 Uhr <br />
-            Mittwoch, Donnerstag und Freitag: 15:00 - 20:00 Uhr
+            <Flex
+              flexDirection="row"
+              flexWrap="wrap"
+              alignItems="center"
+              _class={scss.flex}
+            >
+              Öffnungzeiten: <br />
+              Montag und Dienstag: 15:00 - 18:30 Uhr <br />
+              Mittwoch, Donnerstag und Freitag: 15:00 - 20:00 Uhr
+            </Flex>
           </FooterItem>
         </Footer>
       </Layout>

@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@findnlink/neuro-ui": "^1.0.25",
+    "@findnlink/neuro-ui": "^1.0.35",
     "next": "12.1.6",
     "next-sanity": "^0.5.2",
     "react": "18.1.0",
