@@ -13,8 +13,8 @@ const Termine: NextPage = ({ termine }: any) => {
       <Paper>
         <h1>Termine</h1>
         {termine.length > 0 &&
-          termine.map((item: any) => (
-            <Text style={{ lineHeight: "1.7" }}>
+          termine.map((item: any, index: number) => (
+            <Text key={index} style={{ lineHeight: "1.7" }}>
               <ReactMarkdown>{item?.bio}</ReactMarkdown>
             </Text>
           ))}

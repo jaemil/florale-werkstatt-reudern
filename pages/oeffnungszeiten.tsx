@@ -13,8 +13,8 @@ const Oeffnungszeiten: NextPage = ({ oeffnungszeiten }: any) => {
         <h1>Öffnungszeiten</h1>
 
         {oeffnungszeiten.length > 0 &&
-          oeffnungszeiten.map((item: any) => (
-            <Text style={{ lineHeight: "1.7" }} align="center">
+          oeffnungszeiten.map((item: any, index: number) => (
+            <Text key={index} style={{ lineHeight: "1.7" }} align="center">
               <ReactMarkdown>{item?.bio}</ReactMarkdown>
             </Text>
           ))}

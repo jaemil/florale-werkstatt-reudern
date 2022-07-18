@@ -14,8 +14,8 @@ const Aktuelles: NextPage = ({ aktuelles }: any) => {
         <h1>Aktuelles</h1>
 
         {aktuelles.length > 0 &&
-          aktuelles.map((item: any) => (
-            <Text style={{ lineHeight: "1.7" }} align="center">
+          aktuelles.map((item: any, index: number) => (
+            <Text key={index} style={{ lineHeight: "1.7" }} align="center">
               <ReactMarkdown>{item?.bio}</ReactMarkdown>
             </Text>
           ))}
