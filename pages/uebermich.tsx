@@ -37,7 +37,12 @@ const UeberMich: NextPage = () => {
             Märkten berate ich Sie gerne über: <br />
           </Text>
           <Text align="center">
-            <Text _class={scss.font2}>Hochzeitsdekoration</Text>
+            <Text
+              _class={scss.font2}
+              style={{ fontFamily: "FollowYouIntotheWorld" }}
+            >
+              Hochzeitsdekoration
+            </Text>
             <Image src={Hochzeit.src} />
             <Text _class={scss.font2}>Trauerdekoration</Text>
             <Image src={Trauer.src} />

@@ -1,0 +1,12 @@
+Sanity: 
+Password: florale werkstatt1
+Email: anne-kathrin@web.de
+https://florale-werkstatt-reudern.sanity.studio
+
+Website: www.florale-werkstatt-reudern.de
+
+1. Text in Samsung Notizen schreiben
+2. Lang auf Text drücken -> 3 Punkte -> Alles auswählen -> Kopieren
+3. Auf https://florale-werkstatt-reudern.sanity.studio gehen und mit Email anmelden 
+4. Lang auf Textfläche drücken -> einfügen
+5. Publish drücken (veröffentlichen)
