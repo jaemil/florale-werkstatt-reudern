@@ -16,7 +16,9 @@ const Aktuelles: NextPage = ({ aktuelles }: any) => {
         {aktuelles.length > 0 &&
           aktuelles.map((item: any, index: number) => (
             <Text key={index} style={{ lineHeight: "1.7" }} align="center">
-              <ReactMarkdown>{item?.bio}</ReactMarkdown>
+              <ReactMarkdown className={scss.markdown}>
+                {item?.bio}
+              </ReactMarkdown>
             </Text>
           ))}
       </Paper>
@@ -33,5 +35,6 @@ export async function getStaticProps() {
     props: {
       aktuelles,
     },
+    revalidate: 10,
   };
 }

@@ -15,7 +15,9 @@ const Termine: NextPage = ({ termine }: any) => {
         {termine.length > 0 &&
           termine.map((item: any, index: number) => (
             <Text key={index} style={{ lineHeight: "1.7" }}>
-              <ReactMarkdown>{item?.bio}</ReactMarkdown>
+              <ReactMarkdown className={scss.markdown}>
+                {item?.bio}
+              </ReactMarkdown>
             </Text>
           ))}
       </Paper>
@@ -32,5 +34,6 @@ export async function getStaticProps() {
     props: {
       termine,
     },
+    revalidate: 10,
   };
 }

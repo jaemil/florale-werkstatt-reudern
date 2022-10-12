@@ -15,7 +15,9 @@ const Oeffnungszeiten: NextPage = ({ oeffnungszeiten }: any) => {
         {oeffnungszeiten.length > 0 &&
           oeffnungszeiten.map((item: any, index: number) => (
             <Text key={index} style={{ lineHeight: "1.7" }} align="center">
-              <ReactMarkdown>{item?.bio}</ReactMarkdown>
+              <ReactMarkdown className={scss.markdown}>
+                {item?.bio}
+              </ReactMarkdown>
             </Text>
           ))}
       </Paper>
@@ -32,5 +34,6 @@ export async function getStaticProps() {
     props: {
       oeffnungszeiten,
     },
+    revalidate: 10,
   };
 }
